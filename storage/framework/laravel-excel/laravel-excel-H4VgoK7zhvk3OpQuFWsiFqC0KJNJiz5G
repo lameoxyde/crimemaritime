@@ -1,0 +1,34 @@
+RULES JS 
+Type number 
+Exempple thematique
+
+   $table->id();
+            $table->unsignedBigInteger('thematique_id')->index();
+            $table->integer('numero');
+            $table->string('nom', 50);
+            $table->date('date');
+            $table->string('objet' ,50);
+            $table->string('lieu', 50);
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
+            $table->string('description', 100);
+        
+            
+            $table->foreign('thematique_id')
+            ->references('id')
+            ->on('thematiques')
+            ->onDelete('cascade');
+            
+             protected $fillable = [
+        'numero',
+        'nom',
+        'thematique',
+        'date',
+        'objet',
+        'lieu',
+        'latitude',
+        'longitude',
+        'description',
+
+    ];
+
